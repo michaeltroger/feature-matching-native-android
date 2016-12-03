@@ -1,0 +1,3 @@
+/home/m/Projects/Hello-libs1/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/edit_cache.dir
+/home/m/Projects/Hello-libs1/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/rebuild_cache.dir
+/home/m/Projects/Hello-libs1/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/native_opencv.dir

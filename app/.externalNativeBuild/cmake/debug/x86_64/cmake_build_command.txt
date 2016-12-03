@@ -1,0 +1,17 @@
+Executable : /home/m/Android/Sdk/cmake/3.6.3155560/bin/cmake
+arguments : 
+-H/home/m/Projects/Hello-libs1/app/src/main/cpp
+-B/home/m/Projects/Hello-libs1/app/.externalNativeBuild/cmake/debug/x86_64
+-GAndroid Gradle - Ninja
+-DANDROID_ABI=x86_64
+-DANDROID_NDK=/home/m/Android/Sdk/ndk-bundle
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/m/Projects/Hello-libs1/app/build/intermediates/cmake/debug/obj/x86_64
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_MAKE_PROGRAM=/home/m/Android/Sdk/cmake/3.6.3155560/bin/ninja
+-DCMAKE_TOOLCHAIN_FILE=/home/m/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake
+-DANDROID_NATIVE_API_LEVEL=21
+-DANDROID_PLATFORM=android-13
+-DANDROID_TOOLCHAIN=clang
+-DANDROID_STL=gnustl_static
+jvmArgs : 
+

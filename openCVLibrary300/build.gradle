@@ -1,27 +1,18 @@
-apply plugin: 'com.android.model.library'
+apply plugin: 'com.android.library'
 
-model {
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
 
-    compileOptions.with {
-        sourceCompatibility=JavaVersion.VERSION_1_7
-        targetCompatibility=JavaVersion.VERSION_1_7
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 25
     }
 
-    android {
-        compileSdkVersion = 23
-        buildToolsVersion = "23.0.3"
-
-        defaultConfig.with {
-            minSdkVersion.apiLevel = 14
-            targetSdkVersion.apiLevel = 23
-        }
-    }
-
-    android.buildTypes {
+    buildTypes {
         release {
-            minifyEnabled = false
-            proguardFiles += file('proguard-rules.pro')
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
 }
-

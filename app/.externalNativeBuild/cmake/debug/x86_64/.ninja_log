@@ -1,0 +1,5 @@
+# ninja log v5
+0	680	0	CMakeFiles/native_opencv.dir/native_opencv.cpp.o	e75d81321c758750
+680	700	0	/home/m/Projects/Hello-libs1/app/build/intermediates/cmake/debug/obj/x86_64/libnative_opencv.so	6d0b8939d720303b
+0	676	0	CMakeFiles/native_opencv.dir/native_opencv.cpp.o	e75d81321c758750
+676	696	0	/home/m/Projects/Hello-libs1/app/build/intermediates/cmake/debug/obj/x86_64/libnative_opencv.so	6d0b8939d720303b

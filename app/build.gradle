@@ -1,90 +1,53 @@
-apply plugin: 'com.android.model.application'
+apply plugin: 'com.android.application'
 
-def openCVAndroidSdkDir = "C:\\Android\\OpenCV-android-sdk\\sdk\\native\\jni\\include"
-def openCVLibDir = "src/main/jniLibs";
+android {
+    compileSdkVersion = 25
+    buildToolsVersion = '25.0.1'
 
-model {
-    android {
-        compileSdkVersion = 23
-        buildToolsVersion = "23.0.3"
-
-        defaultConfig.with {
-            applicationId = "be.pxl.troger.featurematchingnative"
-            minSdkVersion.apiLevel = 14
-            targetSdkVersion.apiLevel = 23
-            versionCode = 1
-            versionName = "1.0"
+    defaultConfig {
+        applicationId = 'com.michaeltroger.featureMatchingNative'
+        minSdkVersion 13
+        targetSdkVersion 25
+        versionCode = 1
+        versionName = '1.0'
+        ndk {
+            abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+        }
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_PLATFORM=android-13',
+                        '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
+            }
         }
     }
-
-    android.buildTypes {
+    buildTypes {
         release {
-            // minifyEnabled = false
-            // proguardFiles = getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
         }
     }
-
-
-    //def openCVAndroidSdkDir = "/opt/opencv-android-sdk-v3.0/sdk/native"
-
-    android.ndk {
-        moduleName = "native"
-        cppFlags += "-I${file(openCVAndroidSdkDir)}".toString()
-        cppFlags += "-frtti"
-        cppFlags += "-fexceptions"
-        cppFlags += "-std=c++11"
-        ldLibs += ["log", "opencv_java3"]
-        stl    = "gnustl_static"
+    sourceSets {
+        main {
+            // let gradle pack the shared library into apk
+            jniLibs.srcDirs = ['../distribution/opencv/lib']
+        }
     }
-
-    android.productFlavors {
-        // for detailed abiFilter descriptions, refer to "Supported ABIs" @
-        // https://developer.android.com/ndk/guides/abis.html#sa
-        create("arm") {
-            String architecture = "armeabi"
-            ndk.abiFilters += architecture
-            ndk.ldFlags += "-L${file(openCVLibDir + '/' + architecture)}".toString()
-        }
-        create("arm7") {
-            String architecture = "armeabi-v7a"
-            ndk.abiFilters += architecture
-            ndk.ldFlags += "-L${file(openCVLibDir + '/' + architecture)}".toString()
-        }
-        create("arm8") {
-            String architecture = "arm64-v8a"
-            ndk.abiFilters += architecture
-            ndk.ldFlags += "-L${file(openCVLibDir + '/' + architecture)}".toString()
-        }
-        create("x86") {
-            String architecture = "x86"
-            ndk.abiFilters += architecture
-            ndk.ldFlags += "-L${file(openCVLibDir + '/' + architecture)}".toString()
-
-        }
-        create("x86-64") {
-            String architecture = "x86_64"
-            ndk.abiFilters += architecture
-            ndk.ldFlags += "-L${file(openCVLibDir + '/' + architecture)}".toString()
-
-        }
-        create("mips") {
-            String architecture = "mips"
-            ndk.abiFilters += architecture
-            ndk.ldFlags += "-L${file(openCVLibDir + '/' + architecture)}".toString()
-
-        }
-        create("mips-64") {
-            String architecture = "mips64"
-            ndk.abiFilters += architecture
-            ndk.ldFlags += "-L${file(openCVLibDir + '/' + architecture)}".toString()
-
+    externalNativeBuild {
+        cmake {
+            path 'src/main/cpp/CMakeLists.txt'
         }
     }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.2.0'
-    compile 'com.android.support:design:23.2.0'
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:design:25.0.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    // uncomment out this one to generate lib binaries,
+    // and also uncommented out the one in settings.gradle
+    // after lib is generated, just comment them out again
+    //        compile project(':gen-libs')
     compile project(':openCVLibrary300')
 }
