@@ -1,5 +1,3 @@
 # ninja log v5
-0	617	0	CMakeFiles/native_opencv.dir/native_opencv.cpp.o	ad6864e3290b41f
-617	639	0	/home/m/Projects/Hello-libs1/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative_opencv.so	1440c58a87f6bd09
-1	620	0	CMakeFiles/native_opencv.dir/native_opencv.cpp.o	ad6864e3290b41f
-620	640	0	/home/m/Projects/Hello-libs1/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative_opencv.so	1440c58a87f6bd09
+0	617	0	CMakeFiles/native_opencv.dir/native_opencv.cpp.o	5a026cb8a2dee362
+618	639	0	/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative_opencv.so	e8a1d255919e4a3

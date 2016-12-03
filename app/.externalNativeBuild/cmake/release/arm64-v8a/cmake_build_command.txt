@@ -1,11 +1,11 @@
 Executable : /home/m/Android/Sdk/cmake/3.6.3155560/bin/cmake
 arguments : 
--H/home/m/Projects/Hello-libs1/app/src/main/cpp
--B/home/m/Projects/Hello-libs1/app/.externalNativeBuild/cmake/release/arm64-v8a
+-H/home/m/Projects/feature-matching-native/app/src/main/cpp
+-B/home/m/Projects/feature-matching-native/app/.externalNativeBuild/cmake/release/arm64-v8a
 -GAndroid Gradle - Ninja
 -DANDROID_ABI=arm64-v8a
 -DANDROID_NDK=/home/m/Android/Sdk/ndk-bundle
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/m/Projects/Hello-libs1/app/build/intermediates/cmake/release/obj/arm64-v8a
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/release/obj/arm64-v8a
 -DCMAKE_BUILD_TYPE=Release
 -DCMAKE_MAKE_PROGRAM=/home/m/Android/Sdk/cmake/3.6.3155560/bin/ninja
 -DCMAKE_TOOLCHAIN_FILE=/home/m/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake

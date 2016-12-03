@@ -12,4 +12,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/m/Projects/Hello-libs1/app/.externalNativeBuild/cmake/release/x86
+-- Build files have been written to: /home/m/Projects/feature-matching-native/app/.externalNativeBuild/cmake/release/x86
