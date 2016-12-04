@@ -3,6 +3,7 @@
 ### What is this repository for?
 * Uses the camera image to search for certain objects within it via a feature matching approach using the OpenCV C++ library. The detected object is marked with lines within the scene.
 * uses an async approach, that means that not every frame will be searched for the object and the GUI stays fluent/responsible
+* the OpenCV Java library is used as well for loading the template image. The processing on the other hand is done by the OpenCV C++ library only. 
 * Version 1.1
 
 ### How do I get set up?
