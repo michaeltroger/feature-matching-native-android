@@ -1,7 +1,7 @@
 # Augmented Reality Feature Matching using the NDK with an async approach for >= Android 4.0
 
 ### What is this repository for?
-* Uses the camera image to search for certain objects within it via a feature matching approach using the OpenCV C++ library. The detected object is marked with lines within the scene.
+* Uses the camera image to search for a specified template image within it via a feature matching approach using the OpenCV C++ library. The detected object is marked with lines within the scene. This can be used to e.g. find a logo.
 * uses an async approach, that means that not every frame will be searched for the object and the GUI stays fluent/responsible
 * the OpenCV Java library is used as well for loading the template image. The processing on the other hand is done by the OpenCV C++ library only. 
 * Version 1.1
