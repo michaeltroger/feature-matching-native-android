@@ -148,13 +148,10 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
         InitTemplateImage(templ.getNativeObjAddr());
 
         Bitmap bMap= BitmapFactory.decodeResource(getResources(), R.drawable.coca_cola);
-        //calculate how many bytes our image consists of.
-        int bytes = bMap.getByteCount();
-        //or we can calculate bytes this way. Use a different value than 4 if you don't use 32bit images.
-        //int bytes = b.getWidth()*b.getHeight()*4;
+
+        int bytes = bMap.getByteCount();  //calculate how many bytes our image consists of.
         ByteBuffer buffer = ByteBuffer.allocate(bytes); //Create a new buffer
         bMap.copyPixelsToBuffer(buffer); //Move the byte data to the buffer
-        byte[] array = buffer.array(); //Get the underlying array containing the data.
         Log.d(TAG, "started :)");
     }
 
@@ -168,9 +165,7 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
         }
     }
 
-    public void surfaceDestroyed(SurfaceHolder holder) {
-        // empty. Take care of releasing the Camera preview in your activity.
-    }
+    public void surfaceDestroyed(SurfaceHolder holder) {}
 
     /**
      * manually called when the app is resumed
