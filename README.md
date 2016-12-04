@@ -1,4 +1,4 @@
-# Augmented Reality Feature Matching using NDK for >= Android 4.0 #
+# Augmented Reality Feature Matching using the NDK with an async approach for >= Android 4.0
 
 ### What is this repository for? ###
 * Uses the camera image to search for certain objects within it via a feature matching approach using the OpenCV C++ library. The detected object is marked with lines within the scene.
