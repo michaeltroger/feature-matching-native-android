@@ -14,6 +14,7 @@
 * Android SDK & NDK
 * Dependencies: OpenCV 3.0.0 library (included)
 * Template image location: res/drawable Changeable in CameraPreviewView
+* Make sure the app has the required permission on start, as there is no runtime-check yet! (Camera)
 
 ### Default template image
 <img src="/app/src/main/res/drawable/coca_cola.bmp" alt="" width="200px"/>

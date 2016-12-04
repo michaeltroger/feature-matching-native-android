@@ -1,3 +1,0 @@
-/home/m/Projects/feature-matching-native/app/.externalNativeBuild/cmake/release/armeabi/CMakeFiles/edit_cache.dir
-/home/m/Projects/feature-matching-native/app/.externalNativeBuild/cmake/release/armeabi/CMakeFiles/rebuild_cache.dir
-/home/m/Projects/feature-matching-native/app/.externalNativeBuild/cmake/release/armeabi/CMakeFiles/native_opencv.dir
