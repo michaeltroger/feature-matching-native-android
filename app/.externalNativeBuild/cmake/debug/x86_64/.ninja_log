@@ -1,7 +1,0 @@
-# ninja log v5
-0	679	0	CMakeFiles/native_opencv.dir/native_opencv.cpp.o	c52171ea75e50f24
-679	698	0	/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/obj/x86_64/libnative_opencv.so	203b103a1fb17d90
-0	696	0	CMakeFiles/native_opencv.dir/native_opencv.cpp.o	c52171ea75e50f24
-696	759	0	/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/obj/x86_64/libnative_opencv.so	203b103a1fb17d90
-0	691	0	CMakeFiles/native_opencv.dir/native_opencv.cpp.o	c52171ea75e50f24
-691	712	0	/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/obj/x86_64/libnative_opencv.so	203b103a1fb17d90
