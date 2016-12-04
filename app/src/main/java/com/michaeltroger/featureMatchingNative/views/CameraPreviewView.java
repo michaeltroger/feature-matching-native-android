@@ -107,8 +107,6 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
      */
     private boolean bProcessing = false;
 
-
-
     /**
      * called when a CameraPreviewView instance is created
      * @param context the context - MyActivity
@@ -160,7 +158,6 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
         Log.d(TAG, "started :)");
     }
 
-
     public void surfaceCreated(SurfaceHolder holder) {
         // The Surface has been created, now tell the camera where to draw the preview.
         try {
@@ -181,8 +178,6 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
     private void onResume() {
         // If your preview can change or rotate, take care of those events here.
         // Make sure to stop the preview before resizing or reformatting it.
-
-
 
         if (mHolder.getSurface() == null){
             // preview surface does not exist
@@ -206,8 +201,6 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
             mCamera.setPreviewCallback(mPreviewCallback);
             mCamera.setPreviewDisplay(mHolder);
             mCamera.startPreview();
-
-
         } catch (Exception e){
             Log.d(TAG, "Error starting camera preview: " + e.getMessage());
         }
@@ -216,7 +209,6 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
     public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
        onResume();
     }
-
 
     private Camera.PreviewCallback mPreviewCallback = new Camera.PreviewCallback() {
 
@@ -241,7 +233,6 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                 Log.i(TAG, "fps:" + fps);
             }
 
-
             // At preview mode, the frame data will push to here.
             if (imageFormat == ImageFormat.NV21)
             {
@@ -255,9 +246,6 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
                     Log.e(TAG, "already running");
                 }
             }
-
-
-
         }
     };
 
@@ -267,10 +255,8 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
      */
     public void setCamera(Camera camera) {
         mCamera = camera;
-
         //previewWidth = camera.getParameters().getPreviewSize().width;
         //previewHeight = camera.getParameters().getPreviewSize().height;
-
     }
 
     /**
@@ -303,39 +289,31 @@ public class CameraPreviewView extends SurfaceView implements SurfaceHolder.Call
     // loading C++ libraries
     static
     {
-        Log.i(TAG, "load");
         System.loadLibrary("opencv_java3");
         System.loadLibrary("native_opencv");
-        Log.i(TAG, "failed");
     }
 
+    private class ProcessPreviewDataTask extends AsyncTask<byte[], Void, Boolean> {
+        @Override
+        protected Boolean doInBackground(byte[]... datas) {
+            Log.i(TAG, "background process started");
+            // byte[] data = datas[0];
 
-private class ProcessPreviewDataTask extends AsyncTask<byte[], Void, Boolean> {
-    @Override
-    protected Boolean doInBackground(byte[]... datas) {
-        // TODO Auto-generated method stub
-        Log.i(TAG, "background process started");
-        // byte[] data = datas[0];
+            ImageProcessing(PreviewSizeWidth, PreviewSizeHeight, FrameData, pixels);
 
-        ImageProcessing(PreviewSizeWidth, PreviewSizeHeight, FrameData, pixels);
+            // mCamera.addCallbackBuffer(data);
+            bProcessing = false;
+            Log.i(TAG, "doInBackground "+String.valueOf(isCancelled()));
+            return true;
+        }
 
-
-        // mCamera.addCallbackBuffer(data);
-        bProcessing = false;
-        Log.i(TAG, "doInBackground "+String.valueOf(isCancelled()));
-        return true;
+        @Override
+        protected void onPostExecute(Boolean result){
+            Log.i(TAG, "running onPostExecute");
+            // set pixels
+            bitmap.setPixels(pixels, 0, PreviewSizeWidth, 0, 0, PreviewSizeWidth, PreviewSizeHeight);
+            myCameraPreview.setImageBitmap(bitmap);
+            Log.i(TAG, "bitmap set in imageview");
+        }
     }
-
-    @Override
-    protected void onPostExecute(Boolean result){
-        Log.i(TAG, "running onPostExecute");
-        // set pixels
-        bitmap.setPixels(pixels, 0, PreviewSizeWidth, 0, 0, PreviewSizeWidth, PreviewSizeHeight);
-        myCameraPreview.setImageBitmap(bitmap);
-        Log.i(TAG, "bitmap set in imageview");
-
-    }
-}
-
-
 }

@@ -111,7 +111,6 @@ public class CameraManager {
                         + params.getPictureSize().height
         );
 
-
         Toast.makeText(mContext, "preview size = " + mCamera.getParameters().getPreviewSize().width +
                 ", " + mCamera.getParameters().getPreviewSize().height, Toast.LENGTH_SHORT).show();
     }
