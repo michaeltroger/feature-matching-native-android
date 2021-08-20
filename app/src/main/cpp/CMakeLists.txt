@@ -18,23 +18,45 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 # configure import libs
-set(distribution_DIR ${CMAKE_SOURCE_DIR}/../../../../distribution)
+set(
+        distribution_DIR
+        ${CMAKE_SOURCE_DIR}/../../../../distribution
+)
 
-add_library(lib_opencv SHARED IMPORTED)
+add_library(
+        lib_opencv
+        SHARED
+        IMPORTED
+)
 
-set_target_properties(lib_opencv PROPERTIES IMPORTED_LOCATION
-    ${distribution_DIR}/opencv/lib/${ANDROID_ABI}/libopencv_java3.so)
+set_target_properties(
+        lib_opencv
+        PROPERTIES
+        IMPORTED_LOCATION
+        ${distribution_DIR}/opencv/lib/${ANDROID_ABI}/libopencv_java3.so
+)
 
 # build application's shared lib
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -frtti -fexceptions -std=gnu++11")
+set(
+        CMAKE_CXX_FLAGS
+        "${CMAKE_CXX_FLAGS} -frtti -fexceptions -std=gnu++11"
+)
 
-add_library(native_opencv SHARED
-            native_opencv.cpp)
+add_library(
+        native_opencv
+        SHARED
+        native_opencv.cpp
+)
 
-target_include_directories(native_opencv PRIVATE
-                           ${distribution_DIR}/opencv/include)
+target_include_directories(
+        native_opencv
+        PRIVATE
+        ${distribution_DIR}/opencv/include
+)
 
-target_link_libraries(native_opencv
-                      android
-                      lib_opencv
-                      log)
+target_link_libraries(
+        native_opencv
+        android
+        lib_opencv
+        log
+)
