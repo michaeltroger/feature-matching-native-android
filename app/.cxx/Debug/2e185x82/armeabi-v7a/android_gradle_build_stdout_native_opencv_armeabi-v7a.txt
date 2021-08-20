@@ -1,2 +1,0 @@
-ninja: Entering directory `/home/m/Projects/feature-matching-native/app/.cxx/Debug/2e185x82/armeabi-v7a'
-ninja: no work to do.

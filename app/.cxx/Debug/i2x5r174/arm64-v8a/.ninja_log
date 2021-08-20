@@ -1,4 +1,0 @@
-# ninja log v5
-0	579	1629481776	CMakeFiles/native_opencv.dir/native_opencv.cpp.o	aed817f60c133ffe
-579	617	1629481776	/home/m/Projects/feature-matching-native/app/build/intermediates/cxx/Debug/i2x5r174/obj/arm64-v8a/libnative_opencv.so	10030f0525ae9735
-1	72	1629482192	/home/m/Projects/feature-matching-native/app/build/intermediates/cxx/Debug/i2x5r174/obj/arm64-v8a/libnative_opencv.so	10030f0525ae9735
