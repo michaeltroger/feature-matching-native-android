@@ -28,20 +28,10 @@ android {
                     'proguard-rules.pro'
         }
     }
-    sourceSets {
-        main {
-            // let gradle pack the shared library into apk
-            jniLibs.srcDirs = ['../distribution/opencv/lib']
-        }
-    }
     externalNativeBuild {
         cmake {
             path 'src/main/cpp/CMakeLists.txt'
         }
-    }
-
-    packagingOptions {
-        pickFirst 'lib/armeabi-v7a/libopencv_java3.so'
     }
 }
 
