@@ -12,7 +12,7 @@ android {
         versionCode = 2
         versionName = '1.1'
         ndk {
-            abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            abiFilters 'armeabi-v7a'
         }
         externalNativeBuild {
             cmake {
@@ -41,7 +41,7 @@ android {
     }
 
     packagingOptions {
-        pickFirst 'lib/arm64-v8a/libopencv_java3.so'
+        pickFirst 'lib/armeabi-v7a/libopencv_java3.so'
     }
 }
 
