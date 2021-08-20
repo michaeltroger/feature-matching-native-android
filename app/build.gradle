@@ -48,15 +48,18 @@ android {
 
 
 dependencies {
+    implementation "androidx.core:core-ktx:1.6.0"
+    implementation 'androidx.activity:activity-ktx:1.3.1'
     implementation 'androidx.appcompat:appcompat:1.3.1'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     implementation 'com.google.android.material:material:1.4.0'
     // uncomment out this one to generate lib binaries,
     // and also uncommented out the one in settings.gradle
     // after lib is generated, just comment them out again
     //        compile project(':gen-libs')
     implementation project(':openCVLibrary300')
-    implementation "androidx.core:core-ktx:+"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()
