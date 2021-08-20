@@ -19,8 +19,8 @@ cmake_minimum_required(VERSION 3.4.1)
 
 # configure import libs
 set(
-        distribution_DIR
-        ${CMAKE_SOURCE_DIR}/../../../../distribution
+        lib_src_dir
+        ${CMAKE_SOURCE_DIR}/../../../../opencv-3-4-15
 )
 
 add_library(
@@ -33,13 +33,7 @@ set_target_properties(
         lib_opencv
         PROPERTIES
         IMPORTED_LOCATION
-        ${distribution_DIR}/opencv/lib/${ANDROID_ABI}/libopencv_java3.so
-)
-
-# build application's shared lib
-set(
-        CMAKE_CXX_FLAGS
-        "${CMAKE_CXX_FLAGS} -frtti -fexceptions -std=gnu++11"
+        ${lib_src_dir}/native/libs/${ANDROID_ABI}/libopencv_java3.so
 )
 
 add_library(
@@ -51,7 +45,7 @@ add_library(
 target_include_directories(
         native_opencv
         PRIVATE
-        ${distribution_DIR}/opencv/include
+        ${lib_src_dir}/native/jni/include
 )
 
 target_link_libraries(
