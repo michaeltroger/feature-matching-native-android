@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion = 30
@@ -54,4 +55,9 @@ dependencies {
     // after lib is generated, just comment them out again
     //        compile project(':gen-libs')
     implementation project(':openCVLibrary300')
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
