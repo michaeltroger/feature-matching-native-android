@@ -25,13 +25,13 @@ set(
 
 # register a library to import...
 add_library(
-        lib_opencv_precompiled
+        lib_opencv
         SHARED
         IMPORTED
 )
 # ...and assign the corresponding location of the precompiled library
 set_target_properties(
-        lib_opencv_precompiled
+        lib_opencv
         PROPERTIES
         IMPORTED_LOCATION
         ${lib_src_dir}/native/libs/${ANDROID_ABI}/libopencv_java3.so
@@ -39,21 +39,21 @@ set_target_properties(
 
 # register another library to import...
 add_library(
-        lib_opencv_include
+        native_opencv
         SHARED
         native_opencv.cpp # register the source code of the custom c++ code
 )
 # ...and assign the location of the c++ text files of the opencv lib
 target_include_directories(
-        lib_opencv_include
+        native_opencv
         PRIVATE
         ${lib_src_dir}/native/jni/include
 )
 
 # link the required libs together
 target_link_libraries(
-        lib_opencv_include # includes source code and opencv source file
-        lib_opencv_precompiled # includes the precompiled opencv lib
+        native_opencv # includes source code and opencv source file
+        lib_opencv # includes the precompiled opencv lib
         android # include android sdk
         log # include android logging sdk
 )
