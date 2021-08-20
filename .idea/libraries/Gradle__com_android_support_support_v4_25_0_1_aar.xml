@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.android.support:support-v4:25.0.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/41d71a2df99ef0a79fd28c451d4c18ae1cda57f4/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/41d71a2df99ef0a79fd28c451d4c18ae1cda57f4/output/res" />
-      <root url="file://$USER_HOME$/.android/build-cache/41d71a2df99ef0a79fd28c451d4c18ae1cda57f4/output/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-v4-25.0.1.aar/b2db91c7001b5d1d66b6772193a16999/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-v4-25.0.1.aar/b2db91c7001b5d1d66b6772193a16999/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-v4-25.0.1.aar/b2db91c7001b5d1d66b6772193a16999/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
