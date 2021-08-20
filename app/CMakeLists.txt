@@ -20,7 +20,7 @@ cmake_minimum_required(VERSION 3.4.1)
 # create a variable for accessing the opencv library dir
 set(
         lib_src_dir
-        ${CMAKE_SOURCE_DIR}/../../../../opencv-3-4-15
+        ${CMAKE_SOURCE_DIR}/../opencv-3-4-15
 )
 
 # register a library to import...
@@ -41,7 +41,7 @@ set_target_properties(
 add_library(
         native_opencv
         SHARED
-        native_opencv.cpp # register the source code of the custom c++ code
+        src/main/cpp/native_opencv.cpp # register the source code of the custom c++ code
 )
 # ...and assign the location of the c++ text files of the opencv lib
 target_include_directories(
