@@ -1,0 +1,7 @@
+Executable : /home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/home/m/Projects/feature-matching-native/app/.cxx/Debug/2e185x82/armeabi-v7a
+native_opencv
+jvmArgs : 
+

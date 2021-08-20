@@ -1,0 +1,3 @@
+/home/m/Projects/feature-matching-native/app/.cxx/Debug/2e185x82/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/home/m/Projects/feature-matching-native/app/.cxx/Debug/2e185x82/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/m/Projects/feature-matching-native/app/.cxx/Debug/2e185x82/armeabi-v7a/CMakeFiles/native_opencv.dir
