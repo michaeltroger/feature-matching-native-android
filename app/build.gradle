@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = 'com.michaeltroger.featureMatchingNative'
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 30
         versionCode = 2
         versionName = '1.1'
@@ -17,7 +17,7 @@ android {
         }
         externalNativeBuild {
             cmake {
-                arguments '-DANDROID_PLATFORM=android-14',
+                arguments '-DANDROID_PLATFORM=android-15',
                         '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
             }
         }
@@ -56,7 +56,7 @@ dependencies {
 
     implementation 'com.google.android.material:material:1.4.0'
 
-    implementation project(':openCVLibrary300')
+    implementation project(':opencv-3-4-15')
 }
 repositories {
     mavenCentral()
