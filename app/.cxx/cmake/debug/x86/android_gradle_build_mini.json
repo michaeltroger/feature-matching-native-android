@@ -1,21 +1,34 @@
 {
   "buildFiles": [
-    "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
-    "/home/m/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake"
+    "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt"
   ],
-  "cleanCommands": [
-    "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/x86\" clean"
+  "cleanCommandsComponents": [
+    [
+      "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/x86",
+      "clean"
+    ]
   ],
-  "buildTargetsCommand": "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommandComponents": [
+    "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
   "libraries": {
     "native_opencv-Debug-x86": {
       "artifactName": "native_opencv",
-      "buildCommand": "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/x86\" native_opencv",
+      "buildCommandComponents": [
+        "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/x86",
+        "native_opencv"
+      ],
       "abi": "x86",
       "output": "/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/obj/x86/libnative_opencv.so",
       "runtimeFiles": [
-        "/home/m/Projects/feature-matching-native/app/src/main/cpp/../../../../distribution/opencv/lib/x86/libopencv_java3.so",
-        "/home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/libgnustl_static.a"
+        "/home/m/Projects/feature-matching-native/distribution/opencv/lib/x86/libopencv_java3.so"
       ]
     }
   }

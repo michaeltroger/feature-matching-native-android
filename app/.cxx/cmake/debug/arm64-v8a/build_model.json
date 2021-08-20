@@ -1,13 +1,17 @@
 {
   "abi": "ARM64_V8A",
-  "abiPlatformVersion": 21,
-  "buildSettings": {
-    "environmentVariables": []
+  "info": {
+    "abi": "ARM64_V8A",
+    "bitness": 64,
+    "deprecated": false,
+    "default": true
   },
+  "originalCxxBuildFolder": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/arm64-v8a",
+  "cxxBuildFolder": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/arm64-v8a",
+  "abiPlatformVersion": 21,
   "cmake": {
-    "cmakeArtifactsBaseFolder": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/arm64-v8a",
-    "cmakeServerLogFile": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/arm64-v8a/cmake_server_log.txt",
     "cmakeWrappingBaseFolder": "/home/m/Projects/feature-matching-native/app/.cxx/cxx/debug/arm64-v8a",
+    "cmakeArtifactsBaseFolder": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/arm64-v8a",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -56,6 +60,10 @@
           "value": "/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/obj/arm64-v8a"
         },
         {
+          "name": "CMAKE_RUNTIME_OUTPUT_DIRECTORY",
+          "value": "/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/obj/arm64-v8a"
+        },
+        {
           "name": "CMAKE_MAKE_PROGRAM",
           "value": "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja"
         },
@@ -80,41 +88,51 @@
           "value": "gnustl_static"
         }
       ]
-    }
+    },
+    "cmakeServerLogFile": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/arm64-v8a/cmake_server_log.txt"
   },
-  "cxxBuildFolder": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/arm64-v8a",
-  "info": {
-    "abi": "ARM64_V8A",
-    "bitness": 64,
-    "deprecated": false,
-    "default": true
-  },
-  "originalCxxBuildFolder": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/arm64-v8a",
   "variant": {
     "buildSystemArgumentList": [
       "-DANDROID_PLATFORM\u003dandroid-13",
       "-DANDROID_TOOLCHAIN\u003dclang",
       "-DANDROID_STL\u003dgnustl_static"
     ],
-    "buildTargetSet": [],
     "cFlagsList": [],
-    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
     "cppFlagsList": [],
+    "variantName": "debug",
+    "objFolder": "/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/obj",
+    "soFolder": "/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/lib",
     "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI",
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": [],
+    "implicitBuildTargetSet": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
     "module": {
-      "buildSystem": "CMAKE",
-      "cmake": {
-        "cmakeExe": "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/cmake",
-        "minimumCmakeVersion": "3.10.2",
-        "ninjaExe": "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja"
-      },
-      "cmakeToolchainFile": "/home/m/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
       "cxxFolder": "/home/m/Projects/feature-matching-native/app/.cxx",
-      "gradleModulePathName": ":app",
+      "splitsAbiFilterSet": [],
       "intermediatesFolder": "/home/m/Projects/feature-matching-native/app/build/intermediates",
-      "makeFile": "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
-      "moduleBuildFile": "/home/m/Projects/feature-matching-native/app/build.gradle",
+      "gradleModulePathName": ":app",
       "moduleRootFolder": "/home/m/Projects/feature-matching-native/app",
+      "moduleBuildFile": "/home/m/Projects/feature-matching-native/app/build.gradle",
+      "makeFile": "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "ndkFolder": "/home/m/Android/Sdk/ndk-bundle",
+      "ndkVersion": "15.2.4203891",
+      "ndkSupportedAbiList": [
+        "ARMEABI",
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "MIPS",
+        "MIPS64",
+        "X86",
+        "X86_64"
+      ],
       "ndkDefaultAbiList": [
         "ARMEABI",
         "ARMEABI_V7A",
@@ -124,7 +142,7 @@
         "X86",
         "X86_64"
       ],
-      "ndkFolder": "/home/m/Android/Sdk/ndk-bundle",
+      "ndkDefaultStl": "GNUSTL_STATIC",
       "ndkMetaAbiList": [
         {
           "abi": "ARMEABI",
@@ -169,28 +187,15 @@
           "default": true
         }
       ],
-      "ndkSupportedAbiList": [
-        "ARMEABI",
-        "ARMEABI_V7A",
-        "ARM64_V8A",
-        "MIPS",
-        "MIPS64",
-        "X86",
-        "X86_64"
-      ],
-      "ndkDefaultStl": "GNUSTL_STATIC",
-      "ndkVersion": "15.2.4203891",
-      "project": {
-        "compilerSettingsCacheFolder": "/home/m/Projects/feature-matching-native/.cxx",
-        "cxxFolder": "/home/m/Projects/feature-matching-native/.cxx",
-        "isBuildOnlyTargetAbiEnabled": true,
-        "isCmakeBuildCohabitationEnabled": false,
-        "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "/home/m/Projects/feature-matching-native",
-        "sdkFolder": "/home/m/Android/Sdk",
-        "isPrefabEnabled": false
+      "originalCmakeToolchainFile": "/home/m/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+      "cmakeToolchainFile": "/home/m/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+      "cmake": {
+        "isValidCmakeAvailable": true,
+        "cmakeExe": "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/cmake",
+        "minimumCmakeVersion": "3.10.2",
+        "ninjaExe": "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "isPreferCmakeFileApiEnabled": true
       },
-      "splitsAbiFilterSet": [],
       "stlSharedObjectMap": {
         "GNUSTL_SHARED": {
           "ARMEABI": "/home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi/libgnustl_shared.so",
@@ -224,19 +229,24 @@
         },
         "STLPORT_STATIC": {},
         "SYSTEM": {}
-      }
+      },
+      "project": {
+        "rootBuildGradleFolder": "/home/m/Projects/feature-matching-native",
+        "cxxFolder": "/home/m/Projects/feature-matching-native/.cxx",
+        "compilerSettingsCacheFolder": "/home/m/Projects/feature-matching-native/.cxx",
+        "sdkFolder": "/home/m/Android/Sdk",
+        "isNativeCompilerSettingsCacheEnabled": false,
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isPrefabEnabled": false,
+        "isV2NativeModelEnabled": true
+      },
+      "nativeBuildOutputLevel": "QUIET"
     },
-    "objFolder": "/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/obj",
-    "variantName": "debug",
-    "validAbiList": [
-      "ARMEABI",
-      "ARMEABI_V7A",
-      "ARM64_V8A",
-      "X86",
-      "X86_64"
-    ],
-    "prefabDirectory": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/prefab",
-    "prefabPackageDirectoryList": []
+    "prefabDirectory": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/prefab"
+  },
+  "buildSettings": {
+    "environmentVariables": []
   },
   "prefabFolder": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/prefab/arm64-v8a"
 }

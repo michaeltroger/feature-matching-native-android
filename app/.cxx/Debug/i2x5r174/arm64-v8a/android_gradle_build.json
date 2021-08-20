@@ -1,0 +1,42 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/home/m/Projects/feature-matching-native/app/.cxx/Debug/i2x5r174/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/home/m/Projects/feature-matching-native/app/.cxx/Debug/i2x5r174/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "native_opencv-Debug-arm64-v8a": {
+      "buildCommandComponents": [
+        "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/home/m/Projects/feature-matching-native/app/.cxx/Debug/i2x5r174/arm64-v8a",
+        "native_opencv"
+      ],
+      "buildType": "debug",
+      "abi": "arm64-v8a",
+      "artifactName": "native_opencv",
+      "output": "/home/m/Projects/feature-matching-native/app/build/intermediates/cxx/Debug/i2x5r174/obj/arm64-v8a/libnative_opencv.so",
+      "runtimeFiles": [
+        "/home/m/Projects/feature-matching-native/distribution/opencv/lib/arm64-v8a/libopencv_java3.so"
+      ]
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

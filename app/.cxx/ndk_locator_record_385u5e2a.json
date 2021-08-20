@@ -1,0 +1,11 @@
+{
+  "ndk": "/home/m/Android/Sdk/ndk-bundle",
+  "revision": {
+    "mMajor": 15,
+    "mMinor": 2,
+    "mMicro": 4203891,
+    "mPreview": 0,
+    "mPrecision": "MICRO",
+    "mPreviewSeparator": " "
+  }
+}
