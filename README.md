@@ -1,5 +1,5 @@
 # Augmented Reality Feature Matching using the NDK with an async approach for >= Android 4.0
-
+Attention: This app was created in 2016. I was a beginner to Android development and Computer Vision back then. So don't expect a perfect code please. In 2021 I updated the project to build with the latest Android Studio (2020.3.1), updated most dependencies and converted it to Kotlin, while the business logic remained unchanged.
 <img src="/featurematchingnative.png" alt="Feature matching native" width="400px"/>
 
 ### What is this repository for?
@@ -10,11 +10,10 @@
 * Version 1.1
 
 ### How do I get set up?
-* IDE: Android Studio (tested with 2.2.2)
+* IDE: Android Studio (tested with 2020.3.1)
 * Android SDK & NDK
 * Dependencies: OpenCV 3.0.0 library (included)
 * Template image location: res/drawable Changeable in CameraPreviewView
-* Make sure the app has the required permission on start, as there is no runtime-check yet! (Camera)
 
 ### Default template image
 <img src="/app/src/main/res/drawable/coca_cola.bmp" alt="" width="200px"/>
