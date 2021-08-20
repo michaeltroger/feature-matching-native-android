@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion = 30
     buildToolsVersion = '30.0.3'
+    ndkVersion = '15.2.4203891'
 
     defaultConfig {
         applicationId = 'com.michaeltroger.featureMatchingNative'
@@ -38,7 +39,12 @@ android {
             path 'src/main/cpp/CMakeLists.txt'
         }
     }
+
+    packagingOptions {
+        pickFirst 'lib/arm64-v8a/libopencv_java3.so'
+    }
 }
+
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.1'

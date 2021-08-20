@@ -1,0 +1,50 @@
+[
+  {
+    "level": "INFO",
+    "message": "Start JSON generation. Platform version: 14 min SDK version: armeabi",
+    "file": "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
+    "tag": "debug|armeabi"
+  },
+  {
+    "level": "INFO",
+    "message": "No CMake version was specified in build.gradle. Using default version 3.10.2.",
+    "file": "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
+    "tag": "debug|armeabi"
+  },
+  {
+    "level": "INFO",
+    "message": "Trying to locate CMake in local SDK repository.",
+    "file": "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
+    "tag": "debug|armeabi"
+  },
+  {
+    "level": "INFO",
+    "message": "- CMake found in SDK at \u0027/home/m/Android/Sdk/cmake/3.10.2.4988404\u0027 had version \u00273.10.2\u0027",
+    "file": "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
+    "tag": "debug|armeabi"
+  },
+  {
+    "level": "INFO",
+    "message": "CMake \u00273.6.3155560\u0027 found in SDK did not match requested version \u00273.10.2\u0027.",
+    "file": "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
+    "tag": "debug|armeabi"
+  },
+  {
+    "level": "INFO",
+    "message": "CMake \u00273.6.0\u0027 found in SDK did not match requested version \u00273.10.2\u0027.",
+    "file": "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
+    "tag": "debug|armeabi"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON \u0027/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/armeabi/android_gradle_build.json\u0027 was up-to-date",
+    "file": "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
+    "tag": "debug|armeabi"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON generation completed without problems",
+    "file": "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
+    "tag": "debug|armeabi"
+  }
+]

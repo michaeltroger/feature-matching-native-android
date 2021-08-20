@@ -1,0 +1,45 @@
+{
+  "stringTable": {
+    "0": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/x86",
+    "1": "--target=i686-none-linux-android --gcc-toolchain=/home/m/Android/Sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/linux-x86_64 --sysroot=/home/m/Android/Sdk/ndk-bundle/sysroot -Dnative_opencv_EXPORTS -I/home/m/Projects/feature-matching-native/app/src/main/cpp/../../../../distribution/opencv/include -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/include -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward -isystem /home/m/Android/Sdk/ndk-bundle/sysroot/usr/include -isystem /home/m/Android/Sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -isystem /home/m/Android/Sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security -frtti -fexceptions -std=gnu++11 -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
+    "/home/m/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake"
+  ],
+  "cleanCommands": [
+    "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/x86\" clean"
+  ],
+  "buildTargetsCommand": "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native_opencv-Debug-x86": {
+      "buildCommand": "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/x86\" native_opencv",
+      "buildType": "debug",
+      "toolchain": "3585125890",
+      "abi": "x86",
+      "artifactName": "native_opencv",
+      "files": [
+        {
+          "src": "/home/m/Projects/feature-matching-native/app/src/main/cpp/native_opencv.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/obj/x86/libnative_opencv.so",
+      "runtimeFiles": [
+        "/home/m/Projects/feature-matching-native/app/src/main/cpp/../../../../distribution/opencv/lib/x86/libopencv_java3.so",
+        "/home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/x86/libgnustl_static.a"
+      ]
+    }
+  },
+  "toolchains": {
+    "3585125890": {
+      "cppCompilerExecutable": "/home/m/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

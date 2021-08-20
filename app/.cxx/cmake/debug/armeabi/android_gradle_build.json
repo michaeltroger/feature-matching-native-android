@@ -1,0 +1,45 @@
+{
+  "stringTable": {
+    "0": "/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/armeabi",
+    "1": "--target=armv5te-none-linux-androideabi --gcc-toolchain=/home/m/Android/Sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64 --sysroot=/home/m/Android/Sdk/ndk-bundle/sysroot -Dnative_opencv_EXPORTS -I/home/m/Projects/feature-matching-native/app/src/main/cpp/../../../../distribution/opencv/include -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi/include -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi/include -isystem /home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward -isystem /home/m/Android/Sdk/ndk-bundle/sysroot/usr/include -isystem /home/m/Android/Sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -isystem /home/m/Android/Sdk/ndk-bundle/sysroot/usr/include/arm-linux-androideabi -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -frtti -fexceptions -std=gnu++11 -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "/home/m/Projects/feature-matching-native/app/src/main/cpp/CMakeLists.txt",
+    "/home/m/Android/Sdk/ndk-bundle/build/cmake/android.toolchain.cmake"
+  ],
+  "cleanCommands": [
+    "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/armeabi\" clean"
+  ],
+  "buildTargetsCommand": "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/armeabi\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native_opencv-Debug-armeabi": {
+      "buildCommand": "/home/m/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/m/Projects/feature-matching-native/app/.cxx/cmake/debug/armeabi\" native_opencv",
+      "buildType": "debug",
+      "toolchain": "3585125890",
+      "abi": "armeabi",
+      "artifactName": "native_opencv",
+      "files": [
+        {
+          "src": "/home/m/Projects/feature-matching-native/app/src/main/cpp/native_opencv.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/home/m/Projects/feature-matching-native/app/build/intermediates/cmake/debug/obj/armeabi/libnative_opencv.so",
+      "runtimeFiles": [
+        "/home/m/Projects/feature-matching-native/app/src/main/cpp/../../../../distribution/opencv/lib/armeabi/libopencv_java3.so",
+        "/home/m/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi/libgnustl_static.a"
+      ]
+    }
+  },
+  "toolchains": {
+    "3585125890": {
+      "cppCompilerExecutable": "/home/m/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
