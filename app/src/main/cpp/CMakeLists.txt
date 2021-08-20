@@ -17,40 +17,43 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 
-# configure import libs
+# create a variable for accessing the opencv library dir
 set(
         lib_src_dir
         ${CMAKE_SOURCE_DIR}/../../../../opencv-3-4-15
 )
 
+# register a library to import...
 add_library(
-        lib_opencv
+        lib_opencv_precompiled
         SHARED
         IMPORTED
 )
-
+# ...and assign the corresponding location of the precompiled library
 set_target_properties(
-        lib_opencv
+        lib_opencv_precompiled
         PROPERTIES
         IMPORTED_LOCATION
         ${lib_src_dir}/native/libs/${ANDROID_ABI}/libopencv_java3.so
 )
 
+# register another library to import...
 add_library(
-        native_opencv
+        lib_opencv_include
         SHARED
-        native_opencv.cpp
+        native_opencv.cpp # register the source code of the custom c++ code
 )
-
+# ...and assign the location of the c++ text files of the opencv lib
 target_include_directories(
-        native_opencv
+        lib_opencv_include
         PRIVATE
         ${lib_src_dir}/native/jni/include
 )
 
+# link the required libs together
 target_link_libraries(
-        native_opencv
-        android
-        lib_opencv
-        log
+        lib_opencv_include # includes source code and opencv source file
+        lib_opencv_precompiled # includes the precompiled opencv lib
+        android # include android sdk
+        log # include android logging sdk
 )
