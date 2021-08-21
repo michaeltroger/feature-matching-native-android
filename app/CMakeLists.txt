@@ -23,13 +23,16 @@ set(
         ${CMAKE_SOURCE_DIR}/../opencv-3-4-15
 )
 
-# register a library to import...
+# register the opencv header files...
+include_directories(${lib_src_dir}/native/jni/include)
+
+# register a new library to import...
 add_library(
         lib_opencv
         SHARED
         IMPORTED
 )
-# ...and assign the corresponding location of the precompiled library
+# ...and assign the corresponding location of the precompiled opencv library
 set_target_properties(
         lib_opencv
         PROPERTIES
@@ -37,22 +40,16 @@ set_target_properties(
         ${lib_src_dir}/native/libs/${ANDROID_ABI}/libopencv_java3.so
 )
 
-# register another library to import...
+# register the custom c++ code of the app as library
 add_library(
         native_opencv
         SHARED
-        src/main/cpp/native_opencv.cpp # register the source code of the custom c++ code
-)
-# ...and assign the location of the c++ text files of the opencv lib
-target_include_directories(
-        native_opencv
-        PRIVATE
-        ${lib_src_dir}/native/jni/include
+        src/main/cpp/native_opencv.cpp
 )
 
 # link the required libs together
 target_link_libraries(
-        native_opencv # includes source code and opencv source file
+        native_opencv # includes the custom c++ code of the app
         lib_opencv # includes the precompiled opencv lib
         android # include android sdk
         log # include android logging sdk
