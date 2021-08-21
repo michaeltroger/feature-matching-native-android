@@ -38,6 +38,9 @@ set_target_properties(
         PROPERTIES
         IMPORTED_LOCATION
         ${lib_src_dir}/native/libs/${ANDROID_ABI}/libopencv_java3.so
+        # ${lib_src_dir}/native/libsselfcompiled/${ANDROID_ABI}/libopencv_java3.so
+        # when using latest ndk
+        # includes opencv self compiled with libc++ (standard version is gnustl based)
 )
 
 # register the custom c++ code of the app as library

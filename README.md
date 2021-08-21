@@ -14,6 +14,7 @@ Attention: This app was created in 2016. I was a beginner to Android development
 * Android SDK & NDK
 * Dependencies: OpenCV 3 library (included) [License](/opencv-3-4-15/LICENSE)
 * Template image location: res/drawable Changeable in CameraPreviewView
+* This app is by default compiled with gnustl and the NDK 16, if you would like to use the latest NDK (and compiling with libc++) then read the instructions in the [app/build.gradle](/app/build.gradle)
 
 ### Default template image
 <img src="/app/src/main/res/drawable/coca_cola.bmp" alt="" width="200px"/>
