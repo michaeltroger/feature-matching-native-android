@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion = 30
     buildToolsVersion = '30.0.3'
-    ndkVersion = '15.2.4203891'
+    ndkVersion = '16.1.4479499'
 
     defaultConfig {
         applicationId = 'com.michaeltroger.featureMatchingNative'
