@@ -11,11 +11,18 @@ android {
         targetSdkVersion 30
         versionCode = 2
         versionName = '1.1'
-        ndk.abiFilters 'x86', 'armeabi-v7a'
-        //only x86 abis specified here
-        //a workaround with build variants was required to allow x64 support too
-        //the issue was that the custom c++ code was not compiled and copied into the
-        //x64 apks when minsdk set to 14. x64 is supported since minsdk 21 only
+        splits {
+            abi {
+                enable true
+                reset()
+                include  'x86', 'armeabi-v7a'
+                // only x86 abis specified here
+                // a workaround with build variants was required to allow x64 support too
+                // the issue was that the custom c++ code was not compiled and copied into the
+                // x64 apks when minsdk set to 14. x64 is supported since minsdk 21 only
+                universalApk false
+            }
+        }
         externalNativeBuild {
             cmake {
                 cppFlags "-fexceptions", "-frtti"
@@ -27,14 +34,11 @@ android {
         minApi14 {  // default variant with only x86 support but works with all devices
             dimension "api"
             minSdkVersion 14
-            versionNameSuffix "-minApi14"
         }
-        minApi21 { //choose this build variant to get x64 support (recommended on modern devices)
+        minApi21 { // choose this build variant to get x64 support (recommended on modern devices)
             dimension "api"
             minSdkVersion 21
-            versionNameSuffix "-minApi21"
-            ndk.abiFilters += 'x86_64'
-            ndk.abiFilters += 'arm64-v8a'
+            splits.abi.include 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
         }
     }
 
