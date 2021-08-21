@@ -27,7 +27,6 @@ android {
     productFlavors {
         minApi14 {  // default variant with only x86 support but works with all devices
             dimension "api"
-            minSdkVersion 14
         }
         minApi21 { //choose this build variant to get x64 support (recommended on modern devices)
             dimension "api"
