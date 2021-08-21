@@ -64,7 +64,9 @@ class CameraManager(
         Log.i("parameters", camera!!.parameters.flatten())
         params.setPreviewSize(PREVIEW_WIDTH, PREVIEW_HEIGHT)
         params.setPictureSize(PICTURE_WIDTH, PICTURE_HEIGHT)
-        params.focusMode = Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE
+        if (camera!!.parameters.supportedFocusModes.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
+            params.focusMode = Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE
+        }
         camera!!.parameters = params
         Log.d(
             TAG, """get preview size:
