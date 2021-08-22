@@ -18,7 +18,7 @@ Copyright of the logo: The Coca-Cola Company
 * Template image location: res/drawable Changeable in CameraPreviewView
 
 ### Default template image
-<img src="/app/src/main/res/drawable/coca_cola.bmp" alt="" width="200px"/>
+<img src="/app/src/main/res/drawable/coca_cola.bmp" alt="" width="400px"/>
 Copyright of the logo: The Coca-Cola Company
 
 ### Who do I talk to?
