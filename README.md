@@ -16,7 +16,7 @@ Attention: This app was created in 2016. I was a beginner to Android development
 * Template image location: res/drawable Changeable in CameraPreviewView
 
 ### Default template image
-<img src="/app/src/main/res/drawable/coca_cola.bmp" alt="" width="200px"/>
+<img src="/screenshots/demo.gif" alt="" width="200px"/>
 
 Copyright of the logo: The Coca-Cola Company
 
