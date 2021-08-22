@@ -1,4 +1,4 @@
-# Augmented Reality Feature Matching using the NDK with an async approach for >= Android 4.0
+# Augmented Reality Feature Matching using the NDK with an async approach (Coroutines) for >= Android 4.0
 Attention: This app was created in 2016. I was a beginner to Android development and Computer Vision back then. So don't expect a perfect code please. In 2021 I updated the project to build with the latest Android Studio (2020.3.1), updated most dependencies and converted it to Kotlin, while the business logic remained unchanged.
 
 <img src="/featurematchingnative.png" alt="Feature matching native" width="400px"/>
