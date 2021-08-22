@@ -4,16 +4,11 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion = 30
     buildToolsVersion = '30.0.3'
-    // if you want to use the latest ndk (compilation with libc++ instead of gnustl) then 3 steps are required:
-    // 1. set ndk version to 23.0.7599858
-    // 2. set minSdkVersion to 24
-    // 3. in CMakeLists.txt change the file path of the opencv lib to
-    //     ${lib_src_dir}/native/libsselfcompiled/${ANDROID_ABI}/libopencv_java3.so
-    ndkVersion = '16.1.4479499' // 23.0.7599858 when using latest ndk
+    ndkVersion = '23.0.7599858'
 
     defaultConfig {
         applicationId = 'com.michaeltroger.featureMatchingNative'
-        minSdkVersion 14 //24 when using latest ndk
+        minSdkVersion 14
         targetSdkVersion 30
         versionCode = 3
         versionName = '1.2'
