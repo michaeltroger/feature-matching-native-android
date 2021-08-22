@@ -2,16 +2,12 @@ package com.michaeltroger.featureMatchingNative.views
 
 import android.view.SurfaceView
 import android.view.SurfaceHolder
-import com.michaeltroger.featureMatchingNative.MyActivity
 import android.graphics.Bitmap
-import com.michaeltroger.featureMatchingNative.views.CameraPreviewView
 import android.hardware.Camera.PreviewCallback
 import android.app.ActivityManager
 import android.content.Context
 import android.graphics.ImageFormat
-import com.michaeltroger.featureMatchingNative.views.CameraPreviewView.ProcessPreviewDataTask
 import com.michaeltroger.featureMatchingNative.R
-import android.os.AsyncTask
 import org.opencv.core.Mat
 import org.opencv.imgcodecs.Imgcodecs
 import org.opencv.imgproc.Imgproc
@@ -20,6 +16,7 @@ import android.hardware.Camera
 import android.os.SystemClock
 import android.util.Log
 import android.widget.ImageView
+import kotlinx.coroutines.*
 import org.opencv.android.Utils
 import java.io.IOException
 import java.lang.Exception
@@ -72,15 +69,9 @@ class CameraPreviewView(
      */
     private var imageFormat = 0
 
-    /**
-     * the preview width
-     */
-    private val PreviewSizeWidth: Int
-
-    /**
-     * the preview height
-     */
-    private val PreviewSizeHeight: Int
+    private val scope = CoroutineScope(
+        Job() + Dispatchers.Main
+    )
 
     /**
      * for async handling, when true calculating is already running and computing in current frame is skipped
@@ -160,7 +151,24 @@ class CameraPreviewView(
             if (!bProcessing) {
                 bProcessing = true
                 FrameData = data
-                ProcessPreviewDataTask().execute(data)
+                scope.launch {
+                    withContext(Dispatchers.IO) {
+                        ImageProcessing(PREVIEW_SIZE_WIDTH, PREVIEW_SIZE_HEIGHT, FrameData, pixels)
+                    }
+                    bProcessing = false
+
+                    bitmap!!.setPixels(
+                        pixels,
+                        0,
+                        PREVIEW_SIZE_WIDTH,
+                        0,
+                        0,
+                        PREVIEW_SIZE_WIDTH,
+                        PREVIEW_SIZE_HEIGHT
+                    )
+                    myCameraPreview!!.setImageBitmap(bitmap)
+                    Log.i(TAG, "bitmap set in imageview")
+                }
             } else {
                 Log.e(TAG, "already running")
             }
@@ -185,6 +193,11 @@ class CameraPreviewView(
             mCamera!!.setPreviewCallback(null)
             mCamera!!.stopPreview()
         }
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        scope.cancel()
     }
 
     /**
@@ -247,35 +260,6 @@ class CameraPreviewView(
         }
     }
 
-    private inner class ProcessPreviewDataTask : AsyncTask<ByteArray?, Void?, Boolean>() {
-        override fun doInBackground(vararg datas: ByteArray?): Boolean {
-            Log.i(TAG, "background process started")
-            // byte[] data = datas[0];
-            ImageProcessing(PreviewSizeWidth, PreviewSizeHeight, FrameData, pixels)
-
-            // mCamera.addCallbackBuffer(data);
-            bProcessing = false
-            Log.i(TAG, "doInBackground $isCancelled")
-            return true
-        }
-
-        override fun onPostExecute(result: Boolean) {
-            Log.i(TAG, "running onPostExecute")
-            // set pixels
-            bitmap!!.setPixels(
-                pixels,
-                0,
-                PreviewSizeWidth,
-                0,
-                0,
-                PreviewSizeWidth,
-                PreviewSizeHeight
-            )
-            myCameraPreview!!.setImageBitmap(bitmap)
-            Log.i(TAG, "bitmap set in imageview")
-        }
-    }
-
     /**
      * called when a CameraPreviewView instance is created
      * @param context the context - MyActivity
@@ -290,11 +274,9 @@ class CameraPreviewView(
         mHolder.addCallback(this)
         // deprecated setting, but required on Android versions prior to 3.0
         //mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-        PreviewSizeWidth = PREVIEW_SIZE_WIDTH
-        PreviewSizeHeight = PREVIEW_SIZE_HEIGHT
         //myCameraPreview = CameraPreview;
-        bitmap = Bitmap.createBitmap(PreviewSizeWidth, PreviewSizeHeight, Bitmap.Config.ARGB_8888)
-        pixels = IntArray(PreviewSizeWidth * PreviewSizeHeight)
+        bitmap = Bitmap.createBitmap(PREVIEW_SIZE_WIDTH, PREVIEW_SIZE_HEIGHT, Bitmap.Config.ARGB_8888)
+        pixels = IntArray(PREVIEW_SIZE_WIDTH * PREVIEW_SIZE_HEIGHT)
 
         // load the specified image from file system in bgr color
         var bgr: Mat? = null
