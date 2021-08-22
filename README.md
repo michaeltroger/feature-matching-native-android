@@ -5,7 +5,7 @@ Attention: This app was created in 2016. I was a beginner to Android development
 
 ### What is this repository for?
 * Uses the camera image to search for a specified template image within it via a feature matching approach using the OpenCV C++ library. The detected object is marked with lines within the scene. This can be used to e.g. find a logo.
-* uses an async approach, that means that not every frame will be searched for the object and the GUI stays fluent/responsible
+* uses an async approach (Coroutines), that means that not every frame will be searched for the object and the GUI stays fluent/responsible
 * the OpenCV Java library is used as well for loading the template image. The processing on the other hand is done by the OpenCV C++ library only. 
 * currently the async calculated image is painted over the live camera preview which can be seen on the edge. This might be changed in the future.
 
