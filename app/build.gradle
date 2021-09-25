@@ -10,14 +10,14 @@ android {
         applicationId = 'com.michaeltroger.featureMatchingNative'
         minSdkVersion 14
         targetSdkVersion 30
-        versionCode 7
-        versionName '1.6'
+        versionCode 8
+        versionName '1.7'
         splits {
             abi {
                 enable true
                 reset()
                 include 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
-                universalApk false
+                universalApk true
             }
         }
         externalNativeBuild {
@@ -37,6 +37,13 @@ android {
         cmake {
             path 'CMakeLists.txt'
         }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
     }
 }
 

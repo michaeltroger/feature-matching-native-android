@@ -43,3 +43,4 @@ jobs:
           app/build/outputs/apk/debug/app-armeabi-v7a-debug.apk
           app/build/outputs/apk/debug/app-x86-debug.apk
           app/build/outputs/apk/debug/app-x86_64-debug.apk
+          app/build/outputs/apk/debug/app-universal-debug.apk
