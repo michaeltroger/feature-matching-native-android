@@ -11,7 +11,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 30
         versionCode 8
-        versionName '1.7'
+        versionName "1.7"
         splits {
             abi {
                 enable true
