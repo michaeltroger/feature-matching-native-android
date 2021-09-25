@@ -13,6 +13,7 @@ Copyright of the logo: The Coca-Cola Company
 * uses an async approach (Coroutines), that means that not every frame will be searched for the object and the GUI stays fluent/responsible
 * the OpenCV Java library is used as well for loading the template image. The processing on the other hand is done by the OpenCV C++ library only. 
 * currently the async calculated image is painted over the live camera preview which can be seen on the edge. This might be changed in the future.
+* More computer vision projects at https://michaeltroger.com/computervision/
 
 ### How do I get set up?
 * IDE: Android Studio (tested with 2020.3.1)
