@@ -17,6 +17,8 @@
 
 cmake_minimum_required(VERSION 3.4.1)
 
+project(FeatureMatchingNative)
+
 # create a variable for accessing the opencv library dir
 set(
         lib_src_dir
