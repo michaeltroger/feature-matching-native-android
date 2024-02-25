@@ -8,6 +8,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/features2d/features2d.hpp>
 #include <opencv2/calib3d/calib3d.hpp>
+#include "opencv2/imgproc/imgproc_c.h"
 
 using namespace std;
 using namespace cv;
@@ -52,10 +53,10 @@ extern "C" {
         fd_de->detectAndCompute(templ, Mat(), keypointsTemplate, descriptorsTemplate);
 
         //-- Get the corners from the image_1 ( the object to be "detected" )
-        obj_corners[0] = cvPoint(0,0);
-        obj_corners[1] = cvPoint( templ.cols, 0 );
-        obj_corners[2] = cvPoint( templ.cols, templ.rows );
-        obj_corners[3] = cvPoint( 0, templ.rows );
+        obj_corners[0] = cv::Point (0,0);
+        obj_corners[1] = cv::Point( templ.cols, 0 );
+        obj_corners[2] = cv::Point( templ.cols, templ.rows );
+        obj_corners[3] = cv::Point( 0, templ.rows );
     }
 
     jboolean Java_com_michaeltroger_featureMatchingNative_views_CameraPreviewView_ImageProcessing(
@@ -111,7 +112,7 @@ extern "C" {
                         obj.push_back( keypointsTemplate[ good_matches[i].queryIdx ].pt );
                         scene.push_back( keypointsCamera[ good_matches[i].trainIdx ].pt );
                     }
-                    Mat H = findHomography( obj, scene, CV_RANSAC, 10 );
+                    Mat H = findHomography( obj, scene, RANSAC, 10 );
 
 
                     vector<Point2f> scene_corners(4);

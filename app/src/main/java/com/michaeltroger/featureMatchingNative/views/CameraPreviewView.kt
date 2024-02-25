@@ -158,7 +158,7 @@ class CameraPreviewView(
                     bProcessing = false
 
                     bitmap!!.setPixels(
-                        pixels,
+                        pixels!!,
                         0,
                         PREVIEW_SIZE_WIDTH,
                         0,
@@ -231,7 +231,7 @@ class CameraPreviewView(
         /**
          * the template image to use
          */
-        private const val TEMPLATE_IMAGE = R.drawable.coca_cola
+        private val TEMPLATE_IMAGE = R.drawable.coca_cola
 
         /**
          * if the FPS shall be calculated and printed to logcat
@@ -255,7 +255,7 @@ class CameraPreviewView(
 
         // loading C++ libraries
         init {
-            System.loadLibrary("opencv_java3")
+            System.loadLibrary("opencv_java4")
             System.loadLibrary("native_opencv")
         }
     }
@@ -284,7 +284,7 @@ class CameraPreviewView(
             bgr = Utils.loadResource(
                 context.applicationContext,
                 TEMPLATE_IMAGE,
-                Imgcodecs.CV_LOAD_IMAGE_COLOR
+                Imgcodecs.IMREAD_COLOR
             )
         } catch (e: IOException) {
             e.printStackTrace()

@@ -20,7 +20,7 @@ cmake_minimum_required(VERSION 3.4.1)
 # create a variable for accessing the opencv library dir
 set(
         lib_src_dir
-        ${CMAKE_SOURCE_DIR}/../opencv-3-4-15
+        ${CMAKE_SOURCE_DIR}/../opencv
 )
 
 # register the opencv header files...
@@ -37,7 +37,7 @@ set_target_properties(
         lib_opencv
         PROPERTIES
         IMPORTED_LOCATION
-        ${lib_src_dir}/native/libsselfcompiled/${ANDROID_ABI}/libopencv_java3.so
+        ${lib_src_dir}/native/jni/${ANDROID_ABI}/libopencv_java4.so
         # includes opencv self compiled with libc++ (standard version is gnustl based)
         # this is required when using a ndk > 16
 )

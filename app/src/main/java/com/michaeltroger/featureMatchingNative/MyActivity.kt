@@ -49,7 +49,7 @@ class MyActivity : ComponentActivity() {
         }
     }
 
-    fun onPermissionGranted() {
+    private fun onPermissionGranted() {
         mCameraManager!!.onResume()
         mPreview!!.setCamera(mCameraManager!!.camera)
         mPreview!!.visibility = View.VISIBLE // this can fix the freeze.
