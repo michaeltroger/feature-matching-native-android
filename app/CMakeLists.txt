@@ -37,8 +37,7 @@ add_library(
 # ...and assign the corresponding location of the precompiled opencv library
 set_target_properties(
         lib_opencv
-        PROPERTIES
-        IMPORTED_LOCATION
+        PROPERTIES IMPORTED_LOCATION
         ${lib_src_dir}/native/jni/${ANDROID_ABI}/libopencv_java4.so
 )
 
