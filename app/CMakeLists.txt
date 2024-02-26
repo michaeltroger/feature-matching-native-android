@@ -40,8 +40,6 @@ set_target_properties(
         PROPERTIES
         IMPORTED_LOCATION
         ${lib_src_dir}/native/jni/${ANDROID_ABI}/libopencv_java4.so
-        # includes opencv self compiled with libc++ (standard version is gnustl based)
-        # this is required when using a ndk > 16
 )
 
 # register the custom c++ code of the app as library
