@@ -1,0 +1,41 @@
+name: Update Native OpenCV
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version (e.g. 4.9.0)'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: download sdk
+      run: wget https://github.com/opencv/opencv/releases/download/${{ github.event.inputs.version }}/opencv-${{ github.event.inputs.version }}-android-sdk.zip
+
+    - name: Unzip
+      run: unzip opencv-${{ github.event.inputs.version }}-android-sdk.zip
+
+    - name: copy new files
+      run: |
+        rm -rd opencv/native
+        mkdir opencv/native
+        mkdir opencv/native/jni
+        mkdir opencv/native/libs
+        cp -r OpenCV-android-sdk/sdk/native/jni/include opencv/native/jni/
+        cp -r OpenCV-android-sdk/sdk/native/libs opencv/native/
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v6
+      with:
+        branch: feature/update_opencv_native
+        title: Update of OpenCV Native
+        commit-message: Update of OpenCV Native
+        body: Don't forget to also update the Java dependency (coming through Maven)
+        add-paths: |
+          opencv/native/*
+

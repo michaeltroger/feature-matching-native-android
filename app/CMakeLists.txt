@@ -22,11 +22,11 @@ project(FeatureMatchingNative)
 # create a variable for accessing the opencv library dir
 set(
         lib_src_dir
-        ${CMAKE_SOURCE_DIR}/../opencv
+        ${CMAKE_SOURCE_DIR}/../opencv/native
 )
 
 # register the opencv header files...
-include_directories(${lib_src_dir}/native/jni/include)
+include_directories(${lib_src_dir}/jni/include)
 
 # register a new library to import...
 add_library(
@@ -38,7 +38,7 @@ add_library(
 set_target_properties(
         lib_opencv
         PROPERTIES IMPORTED_LOCATION
-        ${lib_src_dir}/native/jni/${ANDROID_ABI}/libopencv_java4.so
+        ${lib_src_dir}/libs/${ANDROID_ABI}/libopencv_java4.so
 )
 
 # register the custom c++ code of the app as library
