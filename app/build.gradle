@@ -43,7 +43,6 @@ android {
 kotlin.jvmToolchain(java_version)
 
 dependencies {
-    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.activity:activity-ktx:1.8.2'
