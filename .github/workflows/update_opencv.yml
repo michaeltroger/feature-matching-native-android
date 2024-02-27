@@ -1,4 +1,4 @@
-name: Update Native OpenCV
+name: Update OpenCV
 
 on:
   workflow_dispatch:
@@ -14,12 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: download and unzip the sdk
+    - name: Download and unzip the OpenCV sdk
       run: |
         wget https://github.com/opencv/opencv/releases/download/${{ github.event.inputs.version }}/opencv-${{ github.event.inputs.version }}-android-sdk.zip
         unzip opencv-${{ github.event.inputs.version }}-android-sdk.zip
 
-    - name: replace the native folder
+    - name: Update OpenCV Native SDK
       run: |
         rm -rd opencv/native
         mkdir opencv/native
@@ -28,13 +28,16 @@ jobs:
         cp -r OpenCV-android-sdk/sdk/native/jni/include opencv/native/jni/
         cp -r OpenCV-android-sdk/sdk/native/libs opencv/native/
 
+    - name: Update OpenCV Java SDK
+      run: sed -i 's/ext.opencv_version = .*/ext.opencv_version = "${{ github.event.inputs.version }}"/g' build.gradle
+
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v6
       with:
-        branch: feature/update_opencv_native
-        title: Update of OpenCV Native
-        commit-message: Update of OpenCV Native
-        body: Don't forget to also update the Java dependency (coming through Maven)
+        branch: feature/update_opencv
+        title: Update of OpenCV
+        commit-message: Update of OpenCV
         add-paths: |
           opencv/native/*
+          build.gradle
 
