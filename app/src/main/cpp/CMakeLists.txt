@@ -10,7 +10,7 @@ find_package(OpenCV REQUIRED CONFIG)
 add_library(
         app
         SHARED
-        src/main/cpp/native_opencv.cpp
+        native_opencv.cpp
 )
 # compile with c++20
 set_target_properties(
