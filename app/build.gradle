@@ -10,8 +10,8 @@ android {
         applicationId = 'com.michaeltroger.featureMatchingNative'
         minSdkVersion 21
         targetSdkVersion 34
-        versionCode 9
-        versionName "1.8"
+        versionCode 10
+        versionName "1.9"
         splits {
             abi {
                 enable true
