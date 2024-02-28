@@ -20,6 +20,11 @@ android {
                 universalApk true
             }
         }
+        externalNativeBuild {
+            cmake {
+                cppFlags += "-std=c++20"
+            }
+        }
     }
     buildTypes {
         release {
