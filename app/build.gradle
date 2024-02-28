@@ -20,11 +20,6 @@ android {
                 universalApk true
             }
         }
-        externalNativeBuild {
-            cmake {
-                cppFlags "-fexceptions", "-frtti"
-            }
-        }
     }
     buildTypes {
         release {
