@@ -22,9 +22,10 @@ android {
         }
         externalNativeBuild {
             cmake {
-                cppFlags += "-std=c++20"
+                arguments "-DANDROID_STL=c++_shared"
             }
         }
+
     }
     buildTypes {
         release {
@@ -37,6 +38,9 @@ android {
         cmake {
             path 'CMakeLists.txt'
         }
+    }
+    buildFeatures {
+        prefab true // allows to access native libraries from OpenCV AAR in C++
     }
 }
 

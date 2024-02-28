@@ -19,7 +19,6 @@ Copyright of the logo: The Coca-Cola Company
 ### How do I get set up?
 * IDE: Android Studio (tested with 2023.3.1)
 * Android SDK & NDK
-* Dependencies: OpenCV 4 library (included) [License](/opencv/LICENSE) [Copyright](/opencv/COPYRIGHT)
 * Template image location: res/drawable Changeable in CameraPreviewView
 
 ### Default template image

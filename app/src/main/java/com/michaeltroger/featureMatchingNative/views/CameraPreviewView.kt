@@ -255,7 +255,7 @@ class CameraPreviewView(
 
         // loading C++ libraries
         init {
-            System.loadLibrary("native_opencv")
+            System.loadLibrary("app")
         }
     }
 
