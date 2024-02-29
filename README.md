@@ -1,5 +1,7 @@
-# Augmented Reality Template Matching using the NDK with an async approach (Coroutines) using OpenCV 4 for Android
+# Augmented Reality Template Matching using the Android NDK
 ## Approach: Feature Matching - Brute-Force Matching with ORB Descriptors
+## Uses an async approach (Coroutines) and OpenCV 4
+
 [![Android CI](https://github.com/michaeltroger/feature-matching-native-android/actions/workflows/android.yml/badge.svg)](https://github.com/michaeltroger/feature-matching-native-android/actions/workflows/android.yml)
 
 Attention: This app was created in 2016. I was a beginner to Android development and Computer Vision back then. So don't expect a perfect code please. Over the years I updated the dependencies and converted it to Kotlin, while the business logic remained unchanged.
