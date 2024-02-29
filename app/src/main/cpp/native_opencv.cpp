@@ -15,9 +15,10 @@ using namespace cv;
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 
-Mat* mCanny = NULL;
-
 const Scalar RGBA_DRAWING_COLOR = Scalar(0, 255, 0, 255);
+const int LINE_THICKNESS = 4;
+
+Mat* mCanny = NULL;
 
 Ptr<ORB> fd_de;
 BFMatcher dm(NORM_HAMMING);
@@ -119,22 +120,22 @@ extern "C" {
                               scene_corners[0],
                               scene_corners[1],
                               RGBA_DRAWING_COLOR,
-                              4 );
+                              LINE_THICKNESS);
                         line( rgbaImg,
                               scene_corners[1],
                               scene_corners[2],
                               RGBA_DRAWING_COLOR,
-                              4 );
+                              LINE_THICKNESS);
                         line( rgbaImg,
                               scene_corners[2],
                               scene_corners[3],
                               RGBA_DRAWING_COLOR,
-                              4 );
+                              LINE_THICKNESS);
                         line( rgbaImg,
                               scene_corners[3],
                               scene_corners[0],
                               RGBA_DRAWING_COLOR,
-                              4 );
+                              LINE_THICKNESS);
                     }
 
                     catch (Exception e) {

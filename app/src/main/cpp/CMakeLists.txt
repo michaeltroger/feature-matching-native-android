@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.4.1)
+cmake_minimum_required(VERSION 3.22.1)
 
 # register the project for the C++ language
 project(app CXX)
@@ -12,11 +12,12 @@ add_library(
         SHARED
         native_opencv.cpp
 )
+
 # compile with c++20
-set_target_properties(
+target_compile_features(
         app
-        PROPERTIES
-        CXX_STANDARD 20
+        PUBLIC
+        cxx_std_20
 )
 
 # link the required libs together
