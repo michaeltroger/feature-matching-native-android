@@ -1,4 +1,4 @@
-# Augmented Reality Template Matching using the Android NDK
+# Augmented Reality Template Matching using the Android NDK (based on C++)
 ## Approach: Feature Matching - Brute-Force Matching with ORB Descriptors
 ## Uses an async approach (Coroutines) and OpenCV 4
 
