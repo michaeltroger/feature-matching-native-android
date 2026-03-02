@@ -1,17 +1,19 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
 
 android {
-    compileSdkVersion = 34
-    ndkVersion = '26.2.11394342'
+    ndkVersion = '29.0.14206865'
     namespace = 'com.michaeltroger.featureMatchingNative'
 
     defaultConfig {
         applicationId = 'com.michaeltroger.featureMatchingNative'
-        minSdkVersion 21
-        targetSdkVersion 34
-        versionCode 10
-        versionName "1.9"
+        minSdkVersion 23
+        compileSdkVersion 36
+        targetSdkVersion 36
+        versionCode 11
+        versionName "1.10"
         splits {
             abi {
                 enable true
@@ -30,7 +32,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
                     'proguard-rules.pro'
         }
     }
@@ -47,9 +49,9 @@ android {
 kotlin.jvmToolchain(java_version)
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.core:core-ktx:1.17.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.activity:activity-ktx:1.8.2'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'org.opencv:opencv:4.9.0'
+    implementation 'androidx.activity:activity-ktx:1.12.4'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'org.opencv:opencv:4.13.0'
 }

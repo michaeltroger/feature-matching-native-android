@@ -21,6 +21,7 @@ import org.opencv.android.Utils
 import java.io.IOException
 import java.lang.Exception
 import java.nio.ByteBuffer
+import androidx.core.graphics.createBitmap
 
 /**
  * A basic Camera preview class
@@ -274,7 +275,7 @@ class CameraPreviewView(
         // deprecated setting, but required on Android versions prior to 3.0
         //mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
         //myCameraPreview = CameraPreview;
-        bitmap = Bitmap.createBitmap(PREVIEW_SIZE_WIDTH, PREVIEW_SIZE_HEIGHT, Bitmap.Config.ARGB_8888)
+        bitmap = createBitmap(PREVIEW_SIZE_WIDTH, PREVIEW_SIZE_HEIGHT)
         pixels = IntArray(PREVIEW_SIZE_WIDTH * PREVIEW_SIZE_HEIGHT)
 
         // load the specified image from file system in bgr color
