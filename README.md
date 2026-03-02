@@ -19,7 +19,7 @@ Copyright of the logo: The Coca-Cola Company
 * More computer vision projects at https://michaeltroger.com/computervision/
 
 ### How do I get set up?
-* IDE: Android Studio (tested with 2023.3.1)
+* IDE: Android Studio
 * Android SDK & NDK
 * Template image location: res/drawable Changeable in CameraPreviewView
 
